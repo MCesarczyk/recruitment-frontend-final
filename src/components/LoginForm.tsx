@@ -1,13 +1,19 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { UserData } from '../app/types';
 import { Button } from './Button';
 import { InputElement } from './InputElement';
 
-export const LoginForm = () => {
+interface LoginFormProps {
+  onSubmit: (user: UserData) => void;
+};
+
+export const LoginForm = ({ onSubmit }: LoginFormProps) => {
   const [user, setUser] = useState<UserData>({ username: '', password: '' });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    onSubmit(user);
   }
 
   return (
@@ -27,6 +33,7 @@ export const LoginForm = () => {
       />
       <Button
         primary
+        type='submit'
         disabled={false}
       >
         Log in
