@@ -5,13 +5,16 @@ import { PrivateRoute } from './components/PrivateRoute';
 import { Login } from './views/Login';
 import { Home } from './views/Home';
 import { Map } from './components/Map';
+import { Primary } from './views/Primary';
+import { Secondary } from './views/Secondary';
+import { Data } from './views/Data';
 
 export const App = () => {
   const [key, setKey] = useState<string>('');
 
   return (
     <Routes>
-      <Route index element={<Navigate to={ROUTES.login} />} />
+      <Route index element={<Navigate to={ROUTES.home} />} />
       <Route path={ROUTES.login} element={<Login setKey={setKey} />} />
       <Route path={ROUTES.home} element={
         <PrivateRoute sessionKey={key}>
@@ -19,9 +22,9 @@ export const App = () => {
         </PrivateRoute>
       } />
       <Route path={ROUTES.map} element={<PrivateRoute sessionKey={key}><Map /></PrivateRoute>}>
-        <Route path={ROUTES.primary} element={<h1>PRIMARY</h1>} />
-        <Route path={ROUTES.secondary} element={<h1>SECONDARY</h1>} />
-        <Route path={ROUTES.data} element={<h1>DATA</h1>} />
+        <Route path={ROUTES.primary} element={<Primary />} />
+        <Route path={ROUTES.secondary} element={<Secondary />} />
+        <Route path={ROUTES.data} element={<Data />} />
       </Route>
     </Routes>
   )
