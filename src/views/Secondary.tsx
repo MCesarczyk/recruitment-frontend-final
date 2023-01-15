@@ -1,4 +1,7 @@
+import { LatLngExpression } from "leaflet";
 import { useEffect, useState } from "react";
+import { Polygon, useMap } from "react-leaflet";
+import { alterArrayElementsHelper, calculatePolygonCenterHelper, postprocessPolygonHelper, transformPolygonFormat } from "../app/utils";
 import { restApi } from "../services/restAPI";
 
 interface SecondaryProps {
@@ -6,16 +9,15 @@ interface SecondaryProps {
 };
 
 export const Secondary = ({ sessionKey }: SecondaryProps) => {
-  const [polygon, setPolygon]=useState();
-
-  useEffect(() => {
-      console.log("Polygon: ", polygon);
-  }, [polygon]);
+  const [polygon, setPolygon] = useState<LatLngExpression[]>([]);
+  const map = useMap();
 
   const getSecondaryData = async () => {
     const response = await restApi.getSecondary(sessionKey);
-    if(response?.status===200 && response?.data){
-      setPolygon(response.data.extent)
+    if (response?.status === 200 && response?.data) {
+      const { polygon, center } = transformPolygonFormat(response.data.extent);
+      setPolygon(polygon);
+      map.flyTo(center, 15);
     }
   };
 
@@ -24,6 +26,8 @@ export const Secondary = ({ sessionKey }: SecondaryProps) => {
   }, [])
 
   return (
-    <></>
+    <>
+      {polygon && <Polygon positions={polygon} />}
+    </>
   );
 };
