@@ -16,4 +16,24 @@ export const restApi = {
       },
     );
   },
+
+  getPrimary: async () => {
+    return await axiosInstance.get(API_URLS.primary);
+  },
+
+  getSecondary: async (token: string) => {
+    return await axiosInstance.get(API_URLS.secondary, {
+      headers: {
+        "Authorization": `Token ${token}`
+      }
+    });
+  },
+
+  getData: async (token: string) => {
+    return await axiosInstance.get(API_URLS.data, {
+      headers: {
+        "Authorization": `Token ${token}`
+      }
+    });
+  },
 };

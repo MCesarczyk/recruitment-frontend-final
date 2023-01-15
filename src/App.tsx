@@ -23,8 +23,8 @@ export const App = () => {
       } />
       <Route path={ROUTES.map} element={<PrivateRoute sessionKey={key}><Map /></PrivateRoute>}>
         <Route path={ROUTES.primary} element={<Primary />} />
-        <Route path={ROUTES.secondary} element={<Secondary />} />
-        <Route path={ROUTES.data} element={<Data />} />
+        <Route path={ROUTES.secondary} element={<Secondary sessionKey={key} />} />
+        <Route path={ROUTES.data} element={<Data sessionKey={key} />} />
       </Route>
     </Routes>
   )
