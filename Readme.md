@@ -22,9 +22,13 @@
     - view should be responsive and UX-reactive (hover, click effects, transitions etc.)
     - avatars can be any sample images from web or map screenshots
 
-![home_preview](/src//assets//datasets_list.PNG)
+![home_preview](/src/assets/datasets_list.PNG)
 
-1. Add button over the map in upper right corner to go back to the list
+1. Add navigation button over the map in upper right corner to go back to the home list:
+
+![back_button](/src/assets/back_button.PNG)
+
+1. Create test suite (units/integrations) for `Login` view
 
 ## Additional remarks
 - commits should be done after every particular change, names should be self-explanatory
