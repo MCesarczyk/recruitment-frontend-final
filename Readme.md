@@ -12,11 +12,13 @@
       "password": "password"
     }
     ```
+
 1. Get data from `/areas/data` using token login and render on map in `Data` component using scatterplot method  
     - `/login` endpoint should return token, which should be next passed in header in form:  
     ```
     Authorization: Token token_string
     ```
+
     - similiar effect should be achieved:
 
 ![scatterplot](/src/assets/scatterplot.PNG)
