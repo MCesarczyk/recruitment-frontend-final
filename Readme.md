@@ -17,7 +17,14 @@
     ```
     Authorization: Token token_string
     ```
+    - similiar effect should be achieved:
+
+![scatterplot](/src/assets/scatterplot.PNG)
 1. Get data from `/areas/secondary` using token login and render on map as polygon in `Secondary` component 
+    - similiar effect should be achieved:
+
+![polygon](/src/assets/boundary.PNG)
+
 1. Implement styles to list in `Home` component according to visualization below:
     - view should be responsive and UX-reactive (hover, click effects, transitions etc.)
     - avatars can be any sample images from web or map screenshots
