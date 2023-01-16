@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LoginBackground } from "../components/LoginBackground";
 import { LoginForm } from "../components/LoginForm";
 import { LoginSidebar } from "../components/LoginSidebar";
@@ -9,13 +10,15 @@ interface LoginProps {
 };
 
 export const Login = ({ setKey }: LoginProps) => {
-  const { loginUser } = useUserLoginUseCase(setKey);
+  const { loginUser, loading } = useUserLoginUseCase(setKey);
 
   return (
     <>
-      <LoginSidebar>
-        <LoginForm onSubmit={loginUser} />
-      </LoginSidebar>
+      {loading ? <LoadingSpinner /> : (
+        <LoginSidebar>
+          <LoginForm onSubmit={loginUser} />
+        </LoginSidebar>
+      )}
       <LoginBackground />
     </>
   )
