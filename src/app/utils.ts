@@ -1,5 +1,7 @@
 import chroma from "chroma-js";
-import { Boundary, ColorMappingType, ColorScaleType, ScatterPlotPoint, ValueAndLabel } from "./types";
+import { ColorScaleType } from "./enums";
+import { Boundary, ColorMappingType } from "./interfaces";
+import { ScatterPlotPoint } from "./types";
 
 export const postprocessPolygonHelper = (polygon: string): number[][] => {
   const trimmed = polygon?.replace(/SRID=4326;POLYGON \(\(/, "").replace(/\)\)/, "");

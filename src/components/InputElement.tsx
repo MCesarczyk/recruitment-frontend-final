@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import styled from 'styled-components';
-import { UserData } from "../app/types";
+import { UserData } from "../app/interfaces";
 
 export interface InputElementProps {
   value: string;

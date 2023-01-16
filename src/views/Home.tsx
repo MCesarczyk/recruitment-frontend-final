@@ -1,18 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../app/routes";
-
-const itemsList = [
-  {
-    id: 1,
-    title: "data",
-    url: ROUTES.data,
-  },
-  {
-    id: 2,
-    title: "secondary",
-    url: ROUTES.secondary,
-  },
-];
+import { itemsList } from "../app/configs";
 
 export const Home = () => (
   <ul>
