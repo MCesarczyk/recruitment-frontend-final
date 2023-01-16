@@ -1,5 +1,5 @@
 import { useState, FormEvent, useEffect } from 'react';
-import { UserData } from '../app/types';
+import { UserData } from '../app/interfaces';
 import { Button } from './Button';
 import { InputElement } from './InputElement';
 

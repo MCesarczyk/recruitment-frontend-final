@@ -27,7 +27,7 @@ export const Button = ({ children, type, onClick, disabled, primary }: ButtonPro
 
 const StyledButton = styled.button<StyledButtonProps>`
   color: ${({ theme }) => theme.color.white};
-  background-color: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.masala};
   width: 120px;
   height: 40px;
   border-radius: 20px;
@@ -43,17 +43,30 @@ const StyledButton = styled.button<StyledButtonProps>`
   text-transform: uppercase;
   transition: background-color ease-in-out 300ms;
   user-select: none;
-   -webkit-user-select: none;
+  -webkit-user-select: none;
    -khtml-user-select: none;
    -moz-user-select: none;
    -ms-user-select: none;
-
+   
    &:hover {
-     background-color: ${({ theme }) => theme.color.primaryDark};
-   }
- 
-   &:disabled {
-     background-color: ${({ theme }) => theme.color.silver};
-     pointer-events: none;
-   }
+     background-color: ${({ theme }) => theme.color.doveGray};
+    }
+    
+    &:disabled {
+      background-color: ${({ theme }) => theme.color.silver};
+      pointer-events: none;
+    }
+    
+    ${({ primary }) => primary && css`
+      background-color: ${({ theme }) => theme.color.primary};
+      
+      &:hover {
+        background-color: ${({ theme }) => theme.color.primaryDark};
+      }
+      
+      &:disabled {
+        background-color: ${({ theme }) => theme.color.silver};
+        pointer-events: none;
+      }
+    `}
 `;

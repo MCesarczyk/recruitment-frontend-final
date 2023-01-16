@@ -5,9 +5,8 @@ import { PrivateRoute } from './components/PrivateRoute';
 import { Login } from './views/Login';
 import { Home } from './views/Home';
 import { Map } from './components/Map';
-import { Primary } from './views/Primary';
-import { Secondary } from './views/Secondary';
 import { Data } from './views/Data';
+import { Secondary } from './views/Secondary';
 
 export const App = () => {
   const [key, setKey] = useState<string>('');
@@ -22,7 +21,6 @@ export const App = () => {
         </PrivateRoute>
       } />
       <Route path={ROUTES.map} element={<PrivateRoute sessionKey={key}><Map /></PrivateRoute>}>
-        <Route path={ROUTES.primary} element={<Primary />} />
         <Route path={ROUTES.secondary} element={<Secondary sessionKey={key} />} />
         <Route path={ROUTES.data} element={<Data sessionKey={key} />} />
       </Route>
