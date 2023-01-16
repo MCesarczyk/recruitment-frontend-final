@@ -19,7 +19,8 @@
     "react-router-dom": "^6.6.2",
     "react-spinner-material": "^1.4.0",
     "styled-components": "^5.3.6",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",

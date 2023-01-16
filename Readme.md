@@ -24,7 +24,7 @@
 
 ![home_preview](/src/assets/datasets_list.PNG)
 
-1. Add navigation button over the map in upper right corner to go back to the home list:
+1. Add navigation button over the map in lower left corner to go back to the home list:
 
 ![back_button](/src/assets/back_button.PNG)
 
@@ -32,4 +32,4 @@
 
 ## Additional remarks
 - commits should be done after every particular change, names should be self-explanatory
-- it's possible to use adittional libraries in order to complete tasks
+- it's possible to use additional libraries in order to complete tasks

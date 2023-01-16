@@ -4,13 +4,14 @@ import { MAP_DEFAULT_ZOOM, MAP_SOURCE_URL, MAP_VENDOR_NAME, MAP_VENDOR_URL } fro
 import { Link, Outlet } from 'react-router-dom';
 import { Button } from './Button';
 import { ROUTES } from '../app/routes';
+import { ReactComponent as Chevron } from '../assets/chevron.svg';
 
 export const Map = () => {
   return (
     <>
       <ButtonWrapper>
         <Link to={ROUTES.home}>
-          <Button>{'<< back'}</Button>
+          <Button><Icon /><Icon /> back </Button>
         </Link>
       </ButtonWrapper>
       <StyledMapContainer
@@ -43,4 +44,9 @@ const ButtonWrapper = styled.div`
   left: 0;
   padding: 0.25rem 1rem;
   z-index: 900;
+`;
+
+const Icon = styled(Chevron)`
+  width: 12px;
+  transform: rotate(90deg) translateX(-2px);
 `;
